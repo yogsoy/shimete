@@ -1,0 +1,38 @@
+* {
+	font-family: Arial;
+}
+body {
+	background-image: url("images/bg.jpg");
+}
+h1 {
+	font-family: 'Raleway', sans-serif;
+	font-size: 60px;
+	text-align: center;
+	color: #d5a5ff;
+	font-weight: bold;
+}
+.search {
+	text-align: center;
+}
+input {
+	color: #000
+}
+.random {
+	text-align: center;
+}
+.websites {
+	text-align: center;
+	padding: 3px;
+}
+.bigweb {
+	height: auto;
+}
+.bigyoutube {
+}
+.littleweb{
+	text-align: right;
+	img-align: right;
+}
+.utilpage {
+	img-align: center;
+}
