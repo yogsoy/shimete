@@ -3,5 +3,12 @@
 	<title>Soundboard Page</title>
 	<a href="../index.html">Homepage home-page</a>
 	<h1>Click a button to produce the labelled sound!</h1>
-	<button type="button" value="doot" onclick="sounds/doot.wav">doot</button>
+	<!-- script courtesy of user Arunmukar from stackoverflow -->
+	    <script>
+  function play(){
+       var audio = document.getElementById("sounds/doot.wav");
+       audio.play();
+                 }
+   </script>
+	<button type="button" value="doot" onclick="play()">doot</button>
 </html>
