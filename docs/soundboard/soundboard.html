@@ -53,5 +53,13 @@
    </script>
 	<input type="button" value="hitmarker" onclick="playhitmarker()">
 	<audio id="hitmarker" src="sounds/hitmarker.wav"></audio>
-	<input type="text" onkeypress="playhitmarker()" placeholder="Type text here">
+	<input type="text" onkeypress="playhitmarker()" placeholder="Type text here"><br><br>
+		<script>
+  function playree(){
+       var audio = document.getElementById("ree");
+       audio.play();
+                 }
+   </script>
+	<input type="button" value="ree" onclick="playree()">
+	<audio id="ree" src="sounds/ree.wav"></audio>
 </html>
