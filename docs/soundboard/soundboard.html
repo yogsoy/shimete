@@ -50,5 +50,14 @@
    </script>
 	<input type="button" value="hitmarker" onclick="playhitmarker()">
 	<audio id="hitmarker" src="sounds/hitmarker.wav"></audio>
-	<input type="text" onkeypress="playhitmarker()" placeholder="Type text here">
+	<input type="text" onkeypress="playhitmarker()" placeholder="Type text here"><br><br>
+	<input id="custom" type="file" accept="audio/*">
+		<script>
+  function playcustom(){
+       var audio = document.getElementById("custom");
+       audio.play();
+                 }
+   </script>
+   <input type="button" value="Play custom sound" onclick="playcustom()">
+   <audio id="custom" src="custom"></audio>
 </html>
