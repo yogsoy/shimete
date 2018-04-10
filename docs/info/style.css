@@ -3,7 +3,7 @@
 }
 h1 {
 	font-family: "Raleway";
-	font-size: 50px;
+	font-size: 60px;
 	color: #c4b;
 }
 img.profile {
@@ -31,4 +31,8 @@ hr {
 .links {
 	font-family: "Oswald";
 	font-size: 30px;
+}
+h3 {
+	font-family: "Fresca";
+	font-size: 35px;
 }
