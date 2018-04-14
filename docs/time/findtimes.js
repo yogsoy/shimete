@@ -1,11 +1,11 @@
-var currentZone = document.getElementById("timezone");
+// var currentZone = document.getElementById("timezone");
 var date = new Date();
 var hours = date.getHours();
 var minutes = date.getMinutes();
 
 function findLondonTime() {
-	var dateLondon = date-(currentZone*3600-32400);
-	var hourLondon = hours-(currentZone+9);
+	var dateLondon = date-(32400);
+	var hourLondon = hours-(9);
 	if(hourLondon<0) {
 		hourLondon = 24+hourLondon;
 	}
@@ -17,8 +17,8 @@ document.getElementById("london").innerHTML = "London time is "+hourLondon+":"+m
 }
 
 function findHobartTime() {
-	var dateHobart = date-(currentZone*3600-32400);
-	var hourHobart = hours-(currentZone+10);
+	var dateHobart = date-(0);
+	var hourHobart = hours-(0);
 	if(hourHobart<0) {
 		hourHobart = 24+hourHobart;
 	}
@@ -30,8 +30,8 @@ document.getElementById("hobart").innerHTML = "Hobart time is "+hourHobart+":"+m
 }
 
 function findPhillipinesTime() {
-	var datePhillipines = date-(currentZone*3600-7200);
-	var hourPhillipines = hours-(currentZone+2);
+	var datePhillipines = date-(7200);
+	var hourPhillipines = hours-(2);
 	if(hourPhillipines<0) {
 		hourPhillipines = 24+hourPhillipines;
 	}
