@@ -1,4 +1,3 @@
-document.getElementById("timezone").onload = updateAll();
 var currentZone = document.getElementById("timezone");
 var date = new Date();
 var hours = date.getHours();
@@ -11,7 +10,7 @@ function findLondonTime() {
 		hourLondon = 24+hourLondon;
 	}
 // if minutes is 1 digit, add a 0 to fit in with time standards
-if(minutes.toString().length!=2) {
+if(minutes.toString().length != 2) {
 	minutes = "0"+minutes;
 }
 document.getElementById("london").innerHTML = "London time is "+hourLondon+":"+minutes;
