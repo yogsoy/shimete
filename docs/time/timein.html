@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<!-- todo: put time assignment within a function londonTime(), call that within the paragraph or headin or whatever. -->
+<!-- one unix time hour is 3600ms -->
+	<h1>Assuming you are in Hobart (UTC+10), This should provide all the times you need on command. (All times are in 24 hour format.)</h1><br>
+	<button onclick="findLondonTime()">Time in London (Britain)</button>
+	<p id="london"></p>
+	<button onclick="findPhillipinesTime()">Time in Phillipines</button>
+	<p id="phillipines"></p>
+	<script>
+		var date = new Date();
+		var hours = date.getHours();
+		var minutes = date.getMinutes();
+
+		function findLondonTime() {
+			var dateLondon = date-32400;
+			var hourLondon = hours-9;
+			if(hourLondon<0) {
+				hourLondon = 24+hourLondon;
+			}
+			// if minutes is 1 digit, add a 0 to fit in with time standards
+			if(minutes.toString().length!=2) {
+				minutes = "0"+minutes;
+			}
+			document.getElementById("london").innerHTML = "London time is "+hourLondon+":"+minutes;
+		}
+
+		function findPhillipinesTime() {
+			var datePhillipines = date-7200;
+			var hourPhillipines = hours-2;
+			if(hourPhillipines<0) {
+				hourPhillipines = 24+hourPhillipines;
+			}
+			// if minutes is 1 digit, add a 0 to fit in with time standards
+			if(minutes.toString().length!=2) {
+				minutes = "0"+minutes;
+			}
+			document.getElementById("phillipines").innerHTML = "Phillipines time is "+hourPhillipines+":"+minutes;
+		}
+	</script>
+</html>
