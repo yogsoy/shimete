@@ -2,7 +2,12 @@
 <html>
 <!-- todo: put time assignment within a function londonTime(), call that within the paragraph or headin or whatever. -->
 <!-- one unix time hour is 3600ms -->
-	<input type="number" id="timezone" min="-12" max="14" value="10">
+	<head>
+		<script type="text/javascript" src="findtimes.js"></script>
+	</head>
+	<div id="getzone">
+		<button onclick="getTimeZone()">Insert new time zone</button>
+	</div>
 	<h1>This should provide all the times you need for use in our discord server on command. (All times are in 24 hour format.)</h1><br>
 	<button onclick="findLondonTime()">Time in London</button>
 	<p id="london"></p>
@@ -11,5 +16,4 @@
 	<button onclick="findHobartTime()">Time in Hobart</button>
 	<p id="hobart"></p>
 	<button onclick="updateAll()">Update All Times</button>
-	<script type="text/javascript" src="findtimes.js"></script>
 </html>

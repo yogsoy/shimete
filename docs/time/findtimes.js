@@ -1,7 +1,18 @@
-var currentZone = Number(document.getElementById("timezone"));
 var date = new Date();
 var hours = date.getHours();
 var minutes = date.getMinutes();
+var placed;
+var currentZoneUTC = 
+
+function getTimeZone() {
+	if(!placed) {
+		var currentZone = document.createElement("input");
+		currentZone.setAttribute("type", "number");
+		currentZone.setAttribute("value", "10");
+		document.getElementById("getzone").appendChild(currentZone);
+		placed = true;
+	}
+}
 
 function findLondonTime() {
 	var dateLondon = date-(32400);

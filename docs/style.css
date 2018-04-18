@@ -40,3 +40,6 @@ a {
 button {
 	font-family: "Raleway";
 }
+iframe {
+	background-color: RGB(230,230,230);
+}

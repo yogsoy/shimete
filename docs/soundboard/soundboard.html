@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link href="doot.png" rel="icon">
-	</head>
-	<title>Soundboard Page</title>
 	<style>
 	input {
-		font-size: 50px;
+		font-size: 30px;
 	}
 	</style>
-	<audio src="sounds/sparkle.wav" autoplay="autoplay"></audio>
-	<button onclick="window.location.href='../index.html'">< Back</button>
 	<h1>Click a button to produce the labelled sound!</h1>
 	<!-- script courtesy of user Arunmukar from stackoverflow -->
 	<script>
@@ -53,7 +47,7 @@
    </script>
 	<input type="button" value="hitmarker" onclick="playhitmarker()">
 	<audio id="hitmarker" src="sounds/hitmarker.wav"></audio>
-	<input type="text" onkeypress="playhitmarker()" placeholder="Type text here"><br><br>
+	<input type="text" onkeypress="playhitmarker()" placeholder="Press keys" maxlength="0" size="10"><br><br>
 		<script>
   function playree(){
        var audio = document.getElementById("ree");
