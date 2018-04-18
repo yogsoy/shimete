@@ -1,4 +1,4 @@
-// var currentZone = document.getElementById("timezone");
+var currentZone = Number(document.getElementById("timezone"));
 var date = new Date();
 var hours = date.getHours();
 var minutes = date.getMinutes();
@@ -9,6 +9,9 @@ function findLondonTime() {
 	if(hourLondon<0) {
 		hourLondon = 24+hourLondon;
 	}
+if(hourLondon.toString().length !=2) {
+	hourLondon = "0"+hourLondon;
+}
 // if minutes is 1 digit, add a 0 to fit in with time standards
 if(minutes.toString().length != 2) {
 	minutes = "0"+minutes;
@@ -22,6 +25,9 @@ function findHobartTime() {
 	if(hourHobart<0) {
 		hourHobart = 24+hourHobart;
 	}
+if(hourHobart.toString().length !=2) {
+	hourHobart = "0"+hourHobart;
+}
 // if minutes is 1 digit, add a 0 to fit in with time standards
 if(minutes.toString().length!=2) {
 	minutes = "0"+minutes;
@@ -35,6 +41,9 @@ function findPhillipinesTime() {
 	if(hourPhillipines<0) {
 		hourPhillipines = 24+hourPhillipines;
 	}
+if(hourPhillipines.toString().length !=2) {
+	hourPhillipines = "0"+hourPhillipines;
+}
 // if minutes is 1 digit, add a 0 to fit in with time standards
 if(minutes.toString().length!=2) {
 	minutes = "0"+minutes;
