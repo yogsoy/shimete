@@ -5,43 +5,27 @@
 	<head>
 		<script type="text/javascript" src="findtimes.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Fresca|Oswald|Raleway|Gugi" rel="stylesheet">
-		<style>
-			body {
-			background-color: #3aa0ff;
-			}
-			h1 {
-				font-size: 45px;
-				font-family: "Raleway";
-			}
-			button {
-				font-family: "Raleway";
-				font-size: 50px;
-				background-color: #2d7bc4;
-				border-color: #548ec4;
-				color: #efefef;
-				font-weight: Bold;
-			}
-			p {
-				font-size: 50px;
-				font-family: "Gugi";
-			}
-		</style>
+		<link href="style.css" rel="stylesheet">
+		<link href="favicon.png" rel="icon">
+		<title>Discord Time Widget</title>
 	</head>
 	<body>
 		<h1>This should provide all the times you need for use in our discord server on command.</h1>
-		<h2 id="selectedformat"></h2><br>
+		<h2>If you want any cities/countries added, ask @yogsoy#2422 in #feedback-suggestions.</h2><br>
 		<!-- form to ask what time format user wants -->
 		<form id="timeformat">
 			<input type="radio" name="format" value="12hour" onclick="setFormat(this.value)">12 hour time</input><br>
 			<input type="radio" name="format" value="24hour" onclick="setFormat(this.value)">24 hour time</input>
 		</form>
 		<button onclick="updateAll()">Update All Times</button>
+		<div class="gettime">
+			<button onclick="findLondonTime()" class="gettime">Time in London</button>
+			<button onclick="findPhilippinesTime()" class="gettime">Time in Philippines</button>
+			<button onclick="findHobartTime()" class="gettime">Time in Hobart</button>
+		</div>
 		<p></p>
-		<button onclick="findLondonTime()">Time in London</button>
 		<p id="london"></p>
-		<button onclick="findPhilippinesTime()">Time in Philippines</button>
 		<p id="philippines"></p>
-		<button onclick="findHobartTime()">Time in Hobart</button>
 		<p id="hobart"></p>
 	</body>
 </html>

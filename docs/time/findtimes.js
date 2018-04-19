@@ -19,6 +19,7 @@ console.log("hours offset is: " + currentOffsetHours);
 
 
 
+
 function setFormat(format) {
 	if(format == "12hour") {
 		timeFormat = false;

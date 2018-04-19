@@ -1,0 +1,25 @@
+body {
+	background-color: #3aa0ff;
+}
+h1, h2 {
+	font-size: 45px;
+	font-family: "Raleway";
+}
+h2 {
+	font-size: 30px;
+}
+button {
+	font-family: "Raleway";
+	font-size: 50px;
+	background-color: #2d7bc4;
+	border-color: #548ec4;
+	color: #efefef;
+	font-weight: Bold;
+}
+p {
+	font-size: 50px;
+	font-family: "Gugi";
+}
+.gettime {
+	font-size: 15px;
+}
