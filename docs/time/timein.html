@@ -6,6 +6,9 @@
 		<script type="text/javascript" src="findtimes.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Fresca|Oswald|Raleway" rel="stylesheet">
 		<style>
+			body {
+			background-color: #3aa0ff;
+			}
 			h1 {
 				font-size: 45px;
 				font-family: "Raleway";
@@ -13,6 +16,10 @@
 			button {
 				font-family: "Raleway";
 				font-size: 50px;
+				background-color: #2d7bc4;
+				border-color: #548ec4;
+				color: #efefef;
+				font-weight: Bold;
 			}
 			p {
 				font-size: 50px;
@@ -20,12 +27,14 @@
 			}
 		</style>
 	</head>
-	<h1>This should provide all the times you need for use in our discord server on command. (All times are in 24 hour format.)</h1><br>
-	<button onclick="findLondonTime()">Time in London</button>
-	<p id="london"></p>
-	<button onclick="findPhillipinesTime()">Time in Phillipines</button>
-	<p id="phillipines"></p>
-	<button onclick="findHobartTime()">Time in Hobart</button>
-	<p id="hobart"></p>
-	<button onclick="updateAll()">Update All Times</button>
+	<body>
+		<h1>This should provide all the times you need for use in our discord server on command. (All times are in 24 hour format.)</h1><br>
+		<button onclick="findLondonTime()">Time in London</button>
+		<p id="london"></p>
+		<button onclick="findPhillipinesTime()">Time in Phillipines</button>
+		<p id="phillipines"></p>
+		<button onclick="findHobartTime()">Time in Hobart</button>
+		<p id="hobart"></p>
+		<button onclick="updateAll()">Update All Times</button>
+	</body>
 </html>

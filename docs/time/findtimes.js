@@ -1,3 +1,11 @@
+/*
+	TODO:
+	Add toggle switch to switch between 24 and 12 hour time.
+	have time update live using loops or whatever.
+	remove time when button is clicked again (use placed var)
+	fix design in general
+*/
+
 var date = new Date();
 var hours = date.getHours();
 var minutes = date.getMinutes();
