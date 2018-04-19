@@ -44,8 +44,8 @@ function findLondonTime() {
 				hourLondon = hourLondon - 12;
 				timeAMPM = "PM";
 			} else if(hourLondon < 12) {
-				if(hourLondon = 1) {
-					hourLondon = 12;
+				if(hourLondon < 2) {
+					hourLondon < 22;
 				}
 				timeAMPM = "AM";
 			}
@@ -53,10 +53,10 @@ function findLondonTime() {
 		if(timeFormat == true) {
 			if(hourLondon<0) {
 				hourLondon = 24+hourLondon;
-				// if hour is 1 digit, add a 0 to fit in with time standards
-				if(hourLondon.toString().length !=2) {
-					hourLondon = "0"+hourLondon;
-				}
+			}
+			// if hour is 1 digit, add a 0 to fit in with time standards
+			if(hourLondon.toString().length !=2) {
+				hourLondon = "0"+hourLondon;
 			}
 		}
 		// if minutes is 1 digit, add a 0 to fit in with time standards
@@ -84,8 +84,8 @@ function findHobartTime() {
 				hourHobart = hourHobart - 12;
 				timeAMPM = "PM";
 			} else if(hourHobart < 12) {
-				if(hourHobart = 1) {
-					hourHobart = 12;
+				if(hourHobart < 2) {
+					hourHobart < 22;
 				}
 				timeAMPM = "AM";
 			}
@@ -93,10 +93,10 @@ function findHobartTime() {
 		if(timeFormat == true) {
 			if(hourHobart<0) {
 				hourHobart = 24+hourHobart;
-				// if hour is 1 digit, add a 0 to fit in with time standards
-				if(hourHobart.toString().length !=2) {
-					hourHobart = "0"+hourHobart;
-				}
+			}
+			// if hour is 1 digit, add a 0 to fit in with time standards
+			if(hourHobart.toString().length != 2) {
+				hourHobart = "0"+hourHobart;
 			}
 		}
 		// if minutes is 1 digit, add a 0 to fit in with time standards
@@ -124,8 +124,8 @@ function findPhilippinesTime() {
 				hourPhilippines = hourPhilippines - 12;
 				timeAMPM = "PM";
 			} else if(hourPhilippines < 12) {
-				if(hourPhilippines = 1) {
-					hourPhilippines = 12;
+				if(hourPhilippines < 2) {
+					hourPhilippines < 22;
 				}
 				timeAMPM = "AM";
 			}
@@ -133,10 +133,10 @@ function findPhilippinesTime() {
 		if(timeFormat == true) {
 			if(hourPhilippines<0) {
 				hourPhilippines = 24+hourPhilippines;
-				// if hour is 1 digit, add a 0 to fit in with time standards
-				if(hourPhilippines.toString().length !=2) {
-					hourPhilippines = "0"+hourPhilippines;
-				}
+			}
+			// if hour is 1 digit, add a 0 to fit in with time standards
+			if(hourPhilippines.toString().length !=2) {
+				hourPhilippines = "0"+hourPhilippines;
 			}
 		}
 		// if minutes is 1 digit, add a 0 to fit in with time standards
@@ -164,8 +164,8 @@ function findPolandTime() {
 				hourPoland = hourPoland - 12;
 				timeAMPM = "PM";
 			} else if(hourPoland < 12) {
-				if(hourPoland = 1) {
-					hourPoland = 12;
+				if(hourPoland < 2) {
+					hourPoland < 22;
 				}
 				timeAMPM = "AM";
 			}
@@ -173,10 +173,10 @@ function findPolandTime() {
 		if(timeFormat == true) {
 			if(hourPoland<0) {
 				hourPoland = 24+hourPoland;
-				// if hour is 1 digit, add a 0 to fit in with time standards
-				if(hourPoland.toString().length !=2) {
-					hourPoland = "0"+hourPoland;
-				}
+			}
+			// if hour is 1 digit, add a 0 to fit in with time standards
+			if(hourPoland.toString().length !=2) {
+				hourPoland = "0"+hourPoland;
 			}
 		}
 		// if minutes is 1 digit, add a 0 to fit in with time standards
@@ -204,8 +204,8 @@ function findArabianPeninsulaTime() {
 				hourArabianPeninsula = hourArabianPeninsula - 12;
 				timeAMPM = "PM";
 			} else if(hourArabianPeninsula < 12) {
-				if(hourArabianPeninsula = 1) {
-					hourArabianPeninsula = 12;
+				if(hourArabianPeninsula < 2) {
+					hourArabianPeninsula < 22;
 				}
 				timeAMPM = "AM";
 			}
@@ -213,10 +213,10 @@ function findArabianPeninsulaTime() {
 		if(timeFormat == true) {
 			if(hourArabianPeninsula<0) {
 				hourArabianPeninsula = 24+hourArabianPeninsula;
-				// if hour is 1 digit, add a 0 to fit in with time standards
-				if(hourArabianPeninsula.toString().length !=2) {
-					hourArabianPeninsula = "0"+hourArabianPeninsula;
-				}
+			}
+			// if hour is 1 digit, add a 0 to fit in with time standards
+			if(hourArabianPeninsula.toString().length !=2) {
+				hourArabianPeninsula = "0"+hourArabianPeninsula;
 			}
 		}
 		// if minutes is 1 digit, add a 0 to fit in with time standards
