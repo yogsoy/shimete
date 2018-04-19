@@ -11,6 +11,7 @@ var timeLondonPlaced = false;
 var timeHobartPlaced = false;
 var timePhilippinesPlaced = false;
 var timePolandPlaced = false;
+var timeArabianPeninsulaPlaced = false;
 var currentOffset = date.getTimezoneOffset() * 60;
 var currentOffsetHours = currentOffset / 60 / 60;
 var timeAMPM = "";
@@ -190,13 +191,55 @@ function findPolandTime() {
 	}
 }
 
+function findArabianPeninsulaTime() {
+	if(!timeArabianPeninsulaPlaced) {
+		var date = new Date();
+		var dateArabianPeninsula = date - currentOffset + 10800;
+		var hourArabianPeninsula = hours + currentOffsetHours + 3;
+		if(timeFormat == false) {
+			if(hourArabianPeninsula<0) {
+				hourArabianPeninsula = 24+hourArabianPeninsula;
+			}
+			if(hourArabianPeninsula > 12) {
+				hourArabianPeninsula = hourArabianPeninsula - 12;
+				timeAMPM = "PM";
+			} else if(hourArabianPeninsula < 12) {
+				if(hourArabianPeninsula = 1) {
+					hourArabianPeninsula = 12;
+				}
+				timeAMPM = "AM";
+			}
+		}
+		if(timeFormat == true) {
+			if(hourArabianPeninsula<0) {
+				hourArabianPeninsula = 24+hourArabianPeninsula;
+				// if hour is 1 digit, add a 0 to fit in with time standards
+				if(hourArabianPeninsula.toString().length !=2) {
+					hourArabianPeninsula = "0"+hourArabianPeninsula;
+				}
+			}
+		}
+		// if minutes is 1 digit, add a 0 to fit in with time standards
+		if(minutes.toString().length != 2) {
+			minutes = "0"+minutes;
+		}
+		document.getElementById("arabianpeninsula").innerHTML = "Arabian Peninsula time is "+hourArabianPeninsula+":"+minutes+timeAMPM;
+		timeArabianPeninsulaPlaced = true;
+	} else {
+		document.getElementById("arabianpeninsula").innerHTML = null;
+		timeArabianPeninsulaPlaced = false;
+	}
+}
+
 function updateAll() {
 	timeLondonPlaced = false;
 	timeHobartPlaced = false;
 	timePhilippinesPlaced = false;
 	timePolandPlaced = false;
+	timeArabianPeninsulaPlaced = false;
 	findLondonTime();
 	findHobartTime();
 	findPhilippinesTime();
 	findPolandTime();
+	findArabianPeninsulaTime();
 }
