@@ -1,6 +1,5 @@
 /*
 	TODO:
-	- Add toggle switch to switch between 24 and 12 hour time. *done, implement required maths
 	have time update live using loops or whatever.
 	fix design in general
 */
