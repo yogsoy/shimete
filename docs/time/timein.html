@@ -9,7 +9,7 @@
 		<link href="favicon.png" rel="icon">
 		<title>Discord Time Widget</title>
 	</head>
-	<body>
+	<body onload="updateAll()">
 		<h1>This should provide all the times you need for use in our discord server on command.</h1>
 		<h2>If you want any cities/countries added, ask @yogsoy#2422 in #feedback-suggestions.</h2><br>
 		<!-- form to ask what time format user wants -->
@@ -17,15 +17,11 @@
 			<input type="radio" name="format" value="12hour" onclick="setFormat(this.value)">12 hour time</input><br>
 			<input type="radio" name="format" value="24hour" onclick="setFormat(this.value)">24 hour time</input>
 		</form>
-		<button onclick="updateAll()">Update All Times</button>
-		<div class="gettime">
-			<button onclick="findLondonTime()" class="gettime">Time in London</button>
-			<button onclick="findPhilippinesTime()" class="gettime">Time in Philippines</button>
-			<button onclick="findHobartTime()" class="gettime">Time in Hobart</button>
-		</div>
+		<button onclick="updateAll()" width="300">Update All Times</button>
 		<p></p>
 		<p id="london"></p>
 		<p id="philippines"></p>
 		<p id="hobart"></p>
+		<p id="poland"></p>
 	</body>
 </html>

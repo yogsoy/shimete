@@ -10,16 +10,20 @@ h2 {
 }
 button {
 	font-family: "Raleway";
-	font-size: 50px;
+	font-size: 30px;
 	background-color: #2d7bc4;
 	border-color: #548ec4;
 	color: #efefef;
 	font-weight: Bold;
+	width: 260px;
+	height: 45px;
 }
 p {
 	font-size: 50px;
 	font-family: "Gugi";
 }
-.gettime {
-	font-size: 15px;
+form {
+	font-family: "Raleway";
+	font-weight: bold;
+	font-size: 18px;
 }
