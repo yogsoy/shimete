@@ -28,7 +28,13 @@
 		</style>
 	</head>
 	<body>
-		<h1>This should provide all the times you need for use in our discord server on command. (All times are in 24 hour format)</h1><br>
+		<h1>This should provide all the times you need for use in our discord server on command.</h1>
+		<h2 id="selectedformat"></h2><br>
+		<!-- form to ask what time format user wants -->
+		<form id="timeformat">
+			<input type="radio" name="format" value="12hour" onclick="setFormat(this.value)">12 hour time</input><br>
+			<input type="radio" name="format" value="24hour" onclick="setFormat(this.value)">24 hour time</input>
+		</form>
 		<button onclick="updateAll()">Update All Times</button>
 		<p></p>
 		<button onclick="findLondonTime()">Time in London</button>
