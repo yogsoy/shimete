@@ -2,22 +2,19 @@ var date = new Date();
 var hours = date.getHours();
 var minutes = date.getMinutes();
 var placed;
-var currentZoneUTC = 
+var currentOffset = date.getTimezoneOffset() * 60;
+var currentOffsetHours = currentOffset / 60 / 60;
+console.log("current offset is: " + currentOffset);
+console.log("hours offset is: " + currentOffsetHours);
 
-function getTimeZone() {
-	if(!placed) {
-		var currentZone = document.createElement("input");
-		currentZone.setAttribute("type", "number");
-		currentZone.setAttribute("value", "10");
-		document.getElementById("getzone").appendChild(currentZone);
-		placed = true;
-	}
-}
+
 
 function findLondonTime() {
-	var dateLondon = date-(32400);
-	var hourLondon = hours-(9);
+	var date = new Date();
+	var dateLondon = date - (currentOffset + 3600);
+	var hourLondon = hours + currentOffsetHours + 1;
 	if(hourLondon<0) {
+		console.log("hourLondon is less than 0");
 		hourLondon = 24+hourLondon;
 	}
 if(hourLondon.toString().length !=2) {
@@ -30,9 +27,12 @@ if(minutes.toString().length != 2) {
 document.getElementById("london").innerHTML = "London time is "+hourLondon+":"+minutes;
 }
 
+
+
 function findHobartTime() {
-	var dateHobart = date-(0);
-	var hourHobart = hours-(0);
+	var date = new Date();
+	var dateHobart = date - currentOffset + 36000;
+	var hourHobart = hours + currentOffsetHours + 10;
 	if(hourHobart<0) {
 		hourHobart = 24+hourHobart;
 	}
@@ -46,9 +46,12 @@ if(minutes.toString().length!=2) {
 document.getElementById("hobart").innerHTML = "Hobart time is "+hourHobart+":"+minutes;
 }
 
+
+
 function findPhillipinesTime() {
-	var datePhillipines = date-(7200);
-	var hourPhillipines = hours-(2);
+	var date = new Date();
+	var datePhillipines = date - currentOffset + 7200;
+	var hourPhillipines = hours + currentOffsetHours + 8;
 	if(hourPhillipines<0) {
 		hourPhillipines = 24+hourPhillipines;
 	}
@@ -61,6 +64,8 @@ if(minutes.toString().length!=2) {
 }
 document.getElementById("phillipines").innerHTML = "Phillipines time is "+hourPhillipines+":"+minutes;
 }
+
+
 
 function updateAll() {
 	findLondonTime();
