@@ -1,6 +1,6 @@
 /*
 	TODO:
-	have time update live using loops or whatever.
+	have time update live using loops or whatever. **
 	fix design in general
 */
 
@@ -22,6 +22,7 @@ console.log("hours offset is: " + currentOffsetHours);
 function setFormat(format) {
 	if(format == "12hour") {
 		timeFormat = false;
+		//console.log("eeeeE");
 		document.getElementById("selectedformat") = "Currently selected time format: 12 hour (4:48PM)";
 	} else {
 		timeFormat = true;
