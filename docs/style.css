@@ -15,28 +15,6 @@ h2 {
 	color: #ff0;
 	font-family: "Raleway";
 }
-.search {
-	text-align: center;
-}
-input {
-	color: #000
-}
-.websites {
-	text-align: center;
-	padding: 3px;
-}
-.bigweb {
-	height: auto;
-}
-.bigyoutube {
-}
-.littleweb{
-	text-align: right;
-	img-align: right;
-}
-.utilpage {
-	img-align: center;
-}
 a {
 	color: white;
 	font-size: 30px;
