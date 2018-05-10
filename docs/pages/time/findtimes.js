@@ -1,12 +1,12 @@
 /*
 	TODO:
-	have time update live using loops or whatever. **
 	fix design in general
 */
 
 var date = new Date();
 var hours = date.getHours();
 var minutes = date.getMinutes();
+var seconds = date.getSeconds();
 var timeLondonPlaced = false;
 var timeHobartPlaced = false;
 var timePhilippinesPlaced = false;
@@ -16,18 +16,28 @@ var currentOffset = date.getTimezoneOffset() * 60;
 var currentOffsetHours = currentOffset / 60 / 60;
 var timeAMPM = "";
 var timeFormat = true;
-console.log("current offset is: " + currentOffset);
-console.log("hours offset is: " + currentOffsetHours);
+//console.log("current offset is: " + currentOffset);
+//console.log("hours offset is: " + currentOffsetHours);
+
+function autoReload() {
+	location.reload();
+}
+
+function startUpdating() {
+	setTimeout(autoReload, 120000);
+	updateAll();
+	setInterval(updateAll, 1000);
+}
 
 function setFormat(format) {
 	if(format == "12hour") {
 		timeFormat = false;
 		//console.log("eeeeE");
-		document.getElementById("selectedformat") = "Currently selected time format: 12 hour (4:48PM)";
+		document.getElementById("selectedformat").innerHTML = "Currently selected time format: 12 hour (4:48PM)";
 	} else {
 		timeFormat = true;
 		timeAMPM = "";
-		document.getElementById("selectedformat") = "Currently selected time format: 24 hour (16:48)";
+		document.getElementById("selectedformat").innerHTML = "Currently selected time format: 24 hour (16:48)";
 	}
 	//timeFormat = format;
 }
@@ -37,6 +47,7 @@ function findLondonTime() {
 		var date = new Date();
 		var dateLondon = date - currentOffset + 3600;
 		var hourLondon = hours + currentOffsetHours + 1;
+		// if time format is set to 12hours
 		if(timeFormat == false) {
 			if(hourLondon<0) {
 				hourLondon = 24+hourLondon;
@@ -51,20 +62,17 @@ function findLondonTime() {
 				timeAMPM = "AM";
 			}
 		}
+		// if time format is set to 24hours
 		if(timeFormat == true) {
 			if(hourLondon<0) {
 				hourLondon = 24+hourLondon;
 			}
 			// if hour is 1 digit, add a 0 to fit in with time standards
-			if(hourLondon.toString().length !=2) {
+			if(hourLondon.toString().length == 1) {
 				hourLondon = "0"+hourLondon;
 			}
 		}
-		// if minutes is 1 digit, add a 0 to fit in with time standards
-		if(minutes.toString().length != 2) {
-			minutes = "0"+minutes;
-		}
-		document.getElementById("london").innerHTML = "London time is "+hourLondon+":"+minutes+timeAMPM;
+		document.getElementById("london").innerHTML = "London time is "+hourLondon+":"+minutes+":"+seconds+timeAMPM;
 		timeLondonPlaced = true;
 	} else {
 		document.getElementById("london").innerHTML = null;
@@ -96,15 +104,11 @@ function findHobartTime() {
 				hourHobart = 24+hourHobart;
 			}
 			// if hour is 1 digit, add a 0 to fit in with time standards
-			if(hourHobart.toString().length != 2) {
+			if(hourHobart.toString().length == 1) {
 				hourHobart = "0"+hourHobart;
 			}
 		}
-		// if minutes is 1 digit, add a 0 to fit in with time standards
-		if(minutes.toString().length != 2) {
-			minutes = "0"+minutes;
-		}
-		document.getElementById("hobart").innerHTML = "Hobart time is "+hourHobart+":"+minutes+timeAMPM;
+		document.getElementById("hobart").innerHTML = "Hobart time is "+hourHobart+":"+minutes+":"+seconds+timeAMPM;
 		timeHobartPlaced = true;
 	} else {
 		document.getElementById("hobart").innerHTML = null;
@@ -136,15 +140,11 @@ function findPhilippinesTime() {
 				hourPhilippines = 24+hourPhilippines;
 			}
 			// if hour is 1 digit, add a 0 to fit in with time standards
-			if(hourPhilippines.toString().length !=2) {
+			if(hourPhilippines.toString().length == 1) {
 				hourPhilippines = "0"+hourPhilippines;
 			}
 		}
-		// if minutes is 1 digit, add a 0 to fit in with time standards
-		if(minutes.toString().length != 2) {
-			minutes = "0"+minutes;
-		}
-		document.getElementById("philippines").innerHTML = "Philippines time is "+hourPhilippines+":"+minutes+timeAMPM;
+		document.getElementById("philippines").innerHTML = "Philippines time is "+hourPhilippines+":"+minutes+":"+seconds+timeAMPM;
 		timePhilippinesPlaced = true;
 	} else {
 		document.getElementById("philippines").innerHTML = null;
@@ -176,15 +176,11 @@ function findPolandTime() {
 				hourPoland = 24+hourPoland;
 			}
 			// if hour is 1 digit, add a 0 to fit in with time standards
-			if(hourPoland.toString().length !=2) {
+			if(hourPoland.toString().length == 1) {
 				hourPoland = "0"+hourPoland;
 			}
 		}
-		// if minutes is 1 digit, add a 0 to fit in with time standards
-		if(minutes.toString().length != 2) {
-			minutes = "0"+minutes;
-		}
-		document.getElementById("poland").innerHTML = "Poland time is "+hourPoland+":"+minutes+timeAMPM;
+		document.getElementById("poland").innerHTML = "Poland time is "+hourPoland+":"+minutes+":"+seconds+timeAMPM;
 		timePolandPlaced = true;
 	} else {
 		document.getElementById("poland").innerHTML = null;
@@ -216,15 +212,11 @@ function findArabianPeninsulaTime() {
 				hourArabianPeninsula = 24+hourArabianPeninsula;
 			}
 			// if hour is 1 digit, add a 0 to fit in with time standards
-			if(hourArabianPeninsula.toString().length !=2) {
+			if(hourArabianPeninsula.toString().length == 1) {
 				hourArabianPeninsula = "0"+hourArabianPeninsula;
 			}
 		}
-		// if minutes is 1 digit, add a 0 to fit in with time standards
-		if(minutes.toString().length != 2) {
-			minutes = "0"+minutes;
-		}
-		document.getElementById("arabianpeninsula").innerHTML = "Arabian Peninsula time is "+hourArabianPeninsula+":"+minutes+timeAMPM;
+		document.getElementById("arabianpeninsula").innerHTML = "Arabian Peninsula time is "+hourArabianPeninsula+":"+minutes+":"+seconds+timeAMPM;
 		timeArabianPeninsulaPlaced = true;
 	} else {
 		document.getElementById("arabianpeninsula").innerHTML = null;
@@ -233,6 +225,13 @@ function findArabianPeninsulaTime() {
 }
 
 function updateAll() {
+	var date = new Date();
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	var seconds = date.getSeconds();
+	// console.log(date, " and ", hours, " and ", minutes, " and ", seconds)
+	incrementTime();
+	fixLengths();
 	timeLondonPlaced = false;
 	timeHobartPlaced = false;
 	timePhilippinesPlaced = false;
@@ -243,4 +242,43 @@ function updateAll() {
 	findPhilippinesTime();
 	findPolandTime();
 	findArabianPeninsulaTime();
+	findLocalTime();
+	// console.log("running updateAll()");
+}
+
+function findLocalTime() {
+	
+}
+
+function fixLengths() {
+	if(minutes.toString().length == 1) {
+		minutes = "0"+minutes;
+	}
+	if(seconds.toString().length == 1) {
+		seconds = "0"+seconds;
+	}
+}
+
+function incrementTime() {
+	// Note: make sure that you're actually using test operators, and not setting a variable. (seconds = 60) != (seconds == 60)
+	seconds++;
+	if(seconds == 60) {
+		seconds = 0;
+		minutes++;
+	}
+	if(minutes == 60) {
+		minutes = 0;
+		hours++;
+	}
+	if(timeFormat) {
+		if(hours > 24) {
+			hours = 0;
+		}
+	}
+	if(!timeFormat) {
+		if(hours > 12) {
+			hours = 1;
+			timeAMPM = "AM";
+		}
+	}
 }
