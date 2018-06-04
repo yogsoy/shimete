@@ -1,0 +1,27 @@
+* {
+	font-family: "Raleway", Arial;
+}
+body {
+	background-image: url("images/bg.jpg");
+}
+h1 {
+	font-family: "Raleway";
+	font-size: 60px;
+	text-align: center;
+	color: #d5a5ff;
+	font-weight: bold;
+}
+h2 {
+	color: #ff0;
+	font-family: "Raleway";
+}
+a {
+	color: white;
+	font-size: 30px;
+}
+button {
+	font-family: "Raleway";
+}
+iframe {
+	background-color: RGB(230,230,230);
+}

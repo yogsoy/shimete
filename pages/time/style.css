@@ -1,0 +1,33 @@
+body {
+	background-color: #3aa0ff;
+}
+h1, h2 {
+	font-size: 45px;
+	font-family: "Raleway", "Arial";
+}
+h2 {
+	font-size: 30px;
+}
+button {
+	font-family: "Raleway", "Arial";
+	font-size: 30px;
+	background-color: #2d7bc4;
+	border-color: #548ec4;
+	color: #efefef;
+	font-weight: Bold;
+	width: 260px;
+	height: 45px;
+}
+p {
+	font-size: 50px;
+	font-family: "Gugi", "Arial";
+}
+form {
+	font-family: "Raleway", "Arial";
+	font-weight: bold;
+	font-size: 18px;
+}
+#selectedformat {
+	font-family: "Raleway";
+	font-size: 20px;
+}
